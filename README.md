@@ -39,5 +39,4 @@ node podfetch.js
 
 ## TODO
 
-* Make file splitting optional and it's length customizable
-* Currently it's assumed only MP3 files can be fetched
+* Make file splitting optional and its length customizable
