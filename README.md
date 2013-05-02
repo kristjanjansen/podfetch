@@ -4,7 +4,7 @@ A simple stream-based podcast fetcher and file splitter
 
 ## Installation
 
-### On OSX
+### Under OSX
 
 ```
 brew install sox
@@ -20,7 +20,7 @@ npm install
 
 ## Config
 
-Create a sample config file ```config.yml```. 
+Create a sample config file ```config.yml``` with RSS or Atom URLs 
 Note: Feed keys are used for directory names, the can be picked freely.
 
 ```
@@ -39,4 +39,5 @@ node podfetch.js
 
 ## TODO
 
-Make file splitting optional and it's length customizable
+* Make file splitting optional and it's length customizable
+* Currently it's assumed only MP3 files can be fetched
