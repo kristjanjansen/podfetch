@@ -24,15 +24,13 @@ feeds.forEach(function(item) {
 
       var dir = item.id + '-' + date.format('DMMM')
       var fulldir = path.join(config.path, dir)
-      var length = 300
-
 
       if (date.isAfter(moment().subtract(config.age, 'days')) && !fs.existsSync(fulldir)) {
         console.log('Fetching ' + fulldir)
         fs.mkdirSync(fulldir)    
         var split = spawn(
           'sox', 
-          ['-t', 'mp3', '-', path.join(fulldir, dir + '-%2n') + '.mp3', 'trim', '0', length, ':', 'newfile', 'restart'],
+          ['-t', 'mp3', '-', path.join(fulldir, dir + '-%2n') + '.mp3', 'trim', '0', config.duration, ':', 'newfile', 'restart'],
           ['pipe']
         )
         split.on('close', function () {

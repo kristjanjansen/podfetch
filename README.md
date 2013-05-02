@@ -25,7 +25,8 @@ Note: Feed keys are used for directory names, the can be picked freely.
 
 ```
 path: downloads
-age: 7
+age: 7 # maximum age in days
+duration: 300 # split size in seconds
 feeds:
   node: http://feeds.feedburner.com/NodeUp?format=xml
   atp: http://atp.fm/episodes?format=rss
