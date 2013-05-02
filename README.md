@@ -4,8 +4,17 @@ A simple stream-based podcast fetcher and file splitter
 
 ## Installation
 
+### On OSX
+
 ```
 brew install sox
+npm install
+```
+
+### Under Debian
+
+```
+sudo apt-get install sox
 npm install
 ```
 
@@ -30,4 +39,4 @@ node podfetch.js
 
 ## TODO
 
-Make file splitting optional
+Make file splitting optional and it's length customizable
