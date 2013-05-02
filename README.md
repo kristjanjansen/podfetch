@@ -20,7 +20,7 @@ npm install
 
 ## Config
 
-Create a sample config file ```config.yml``` with RSS or Atom URLs 
+Create a sample config file ```config.yml``` with RSS or Atom URLs.
 Note: Feed keys are used for directory names, the can be picked freely.
 
 ```
