@@ -1,0 +1,10 @@
+{
+  "name": "podfetch",
+  "version": "0.0.1",
+  "dependencies": {
+    "request": "2.16.x",
+    "moment": "2.0.x",
+    "feedparser": "0.14.x",
+    "js-yaml": "2.0.x"
+  }
+}
