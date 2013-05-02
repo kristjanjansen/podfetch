@@ -22,21 +22,21 @@ feeds.forEach(function(item) {
 
       var date = moment(article.date)
 
-      var file2 = item.id + '-' + date.format('DMMM')
-      var filepath = path.join(config.path, file2)
+      var dir = item.id + '-' + date.format('DMMM')
+      var fulldir = path.join(config.path, dir)
       var length = 300
 
 
-      if (date.isAfter(moment().subtract(config.age, 'days')) && !fs.existsSync(filepath)) {
-        console.log('Fetching ' + filepath)
-        fs.mkdirSync(filepath)    
+      if (date.isAfter(moment().subtract(config.age, 'days')) && !fs.existsSync(fulldir)) {
+        console.log('Fetching ' + fulldir)
+        fs.mkdirSync(fulldir)    
         var split = spawn(
           'sox', 
-          ['-t', 'mp3', '-', path.join(filepath, file2 + '-%2n') + '.mp3', 'trim', '0', length, ':', 'newfile', 'restart'],
+          ['-t', 'mp3', '-', path.join(fulldir, dir + '-%2n') + '.mp3', 'trim', '0', length, ':', 'newfile', 'restart'],
           ['pipe']
         )
         split.on('close', function () {
-          console.log('Done with ' + filepath)
+          console.log('Done with ' + fulldir)
         });
         request(article.enclosures[0].url).pipe(split.stdin)    
     }
